@@ -1,23 +1,27 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
-
+// npm install @mui/icons-material @mui/material @emotion/styled @emotion/react
+import StarPractice from "./components/StarPractice"
+import ToDoList from './components/ToDoList';
 function App() {
+
+  const RatingChange = (newRating) => {
+    console.log("New rating is provided")
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App"
+      // style={{
+      //   display: "flex",
+      //   flexDirection: "column",
+      //   justifyContent: "center",  // vertical centering
+      //   alignItems: "center",      // horizontal centering
+      //   minHeight: "100vh",        // fill screen
+      //   backgroundColor: "black",
+      // }}
+      >
+
+      {/* // <StarPractice initialValue = {2} onChange={ (value) => RatingChange(value)} /> */}
+      < ToDoList />
     </div>
   );
 }
