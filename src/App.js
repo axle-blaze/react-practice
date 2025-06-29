@@ -3,6 +3,7 @@ import './App.css';
 // npm install @mui/icons-material @mui/material @emotion/styled @emotion/react
 import StarPractice from "./components/StarPractice"
 import ToDoList from './components/ToDoList';
+import ToDoListAdvanced from './components/ToDoListAdvanced';
 function App() {
 
   const RatingChange = (newRating) => {
@@ -22,6 +23,7 @@ function App() {
 
       {/* // <StarPractice initialValue = {2} onChange={ (value) => RatingChange(value)} /> */}
       < ToDoList />
+      <ToDoListAdvanced />
     </div>
   );
 }
