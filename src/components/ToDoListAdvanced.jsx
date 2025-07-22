@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
+import PopUp from './PopUp'
 
 function ToDoListAdvanced() {
 
     const [todo, settodo] = useState([])
     const [ task_done, settask_done] = useState([])
     const [curr, setCurr] = useState("")
+    const [close, setClose] = useState(false)
 
     function thisChange(index) {
         settask_done([...task_done, todo[index]])
@@ -14,7 +16,6 @@ function ToDoListAdvanced() {
                 new_todo.push(todo[i])
             }
         }
-
         settodo(new_todo)
     }
 
@@ -25,6 +26,11 @@ function ToDoListAdvanced() {
         align : "center",
         flexDirection : "row"
     }}>
+    <div>
+        <h1>ToDoListAdvanced</h1>
+        <button onClick={() => setClose(true)}>Open PopUp</button>
+        {close && <PopUp message="This is a popup message!" onClose={() => setClose(false)} />}
+    </div>
     <div> 
         <p>This is the todo list</p>  
         {todo.map((val, index) =>
