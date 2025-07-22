@@ -8,11 +8,13 @@ import "./PopUp.css";
 
 /* PopUp.css */
 
-const PopUp = ({ message, onClose }) => (
+const PopUp = ({ message, onClose, newData }) => (
     <div className="popup-overlay">
         <div className="popup-content">
             <span>{message}</span>
             <button onClick={onClose}>Close</button>
+            <button onClick={() => newData("New Task")}>Add New Task</button>
+            
         </div>
     </div>
 );

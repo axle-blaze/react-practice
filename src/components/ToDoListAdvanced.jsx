@@ -7,6 +7,7 @@ function ToDoListAdvanced() {
     const [ task_done, settask_done] = useState([])
     const [curr, setCurr] = useState("")
     const [close, setClose] = useState(false)
+    
 
     function thisChange(index) {
         settask_done([...task_done, todo[index]])
@@ -19,6 +20,11 @@ function ToDoListAdvanced() {
         settodo(new_todo)
     }
 
+    function new_data(data, check) {
+        console.log("This is the new data", data, check)
+        settodo([...todo, data])
+    }
+
   return (
     <div 
     style = {{
@@ -29,7 +35,7 @@ function ToDoListAdvanced() {
     <div>
         <h1>ToDoListAdvanced</h1>
         <button onClick={() => setClose(true)}>Open PopUp</button>
-        {close && <PopUp message="This is a popup message!" onClose={() => setClose(false)} />}
+        {close && <PopUp message="This is a popup message!" onClose={() => setClose(false)} newData={new_data} />}
     </div>
     <div> 
         <p>This is the todo list</p>  
