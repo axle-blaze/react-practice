@@ -30,14 +30,19 @@ function ToDoListAdvanced() {
     style = {{
         display : "flex",
         align : "center",
-        flexDirection : "row"
+        flexDirection : "row",
+        background : "black",
+        color : "white",
     }}>
     <div>
         <h1>ToDoListAdvanced</h1>
         <button onClick={() => setClose(true)}>Open PopUp</button>
         {close && <PopUp message="This is a popup message!" onClose={() => setClose(false)} newData={new_data} />}
     </div>
-    <div> 
+    <div
+    style = {{
+        alignItems : "center",
+    }}> 
         <p>This is the todo list</p>  
         {todo.map((val, index) =>
         (<div
