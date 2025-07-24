@@ -19,8 +19,8 @@ function ToDoListAdvanced() {
         }
         settodo(new_todo)
     }
-
-    function new_data(data, check) {
+    // Adding some comments
+    function new_data(data, check) {``
         console.log("This is the new data", data, check)
         settodo([...todo, data])
     }
